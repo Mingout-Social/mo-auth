@@ -1,6 +1,8 @@
 package config
 
-import "aidanwoods.dev/go-paseto"
+import (
+	"aidanwoods.dev/go-paseto"
+)
 
 const (
 	AudienceAndroid = "android"
@@ -11,7 +13,10 @@ const (
 var PasetoSecretKey paseto.V4AsymmetricSecretKey
 var PasetoPublicKey paseto.V4AsymmetricPublicKey
 
-func InitPasetoKeys() {
+func InitPasetoPrivateKey() {
 	PasetoSecretKey = paseto.NewV4AsymmetricSecretKey()
+}
+
+func InitPasetoPublicKey() {
 	PasetoPublicKey = PasetoSecretKey.Public()
 }
