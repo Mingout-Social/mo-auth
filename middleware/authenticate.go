@@ -1,9 +1,11 @@
 package middleware
 
 import (
-	"mo-auth/controllers"
-	"mo-auth/lib"
 	"net/http"
+
+	"github.com/Mingout-Social/mo-auth/lib"
+
+	"github.com/Mingout-Social/mo-auth/controllers"
 
 	"github.com/gin-gonic/gin"
 )
