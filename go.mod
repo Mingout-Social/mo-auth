@@ -1,4 +1,4 @@
-module mo-auth
+module github.com/Mingout-Social/mo-auth
 
 go 1.17
 

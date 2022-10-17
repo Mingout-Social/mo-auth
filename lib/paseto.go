@@ -1,8 +1,9 @@
 package lib
 
 import (
-	"mo-auth/config"
 	"time"
+
+	"github.com/Mingout-Social/mo-auth/config"
 
 	"aidanwoods.dev/go-paseto"
 	"github.com/sirupsen/logrus"
