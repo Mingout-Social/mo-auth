@@ -5,8 +5,6 @@ import (
 
 	"github.com/Mingout-Social/mo-auth/lib"
 
-	"github.com/Mingout-Social/mo-auth/controllers"
-
 	"github.com/gin-gonic/gin"
 )
 
@@ -17,7 +15,7 @@ func AuthenticateUserToken(ctx *gin.Context) {
 	userId, err := lib.VerifyToken(token, os)
 
 	if err != nil {
-		ctx.JSON(http.StatusForbidden, controllers.ErrorResponse{
+		ctx.JSON(http.StatusForbidden, lib.ErrorResponse{
 			Error:        true,
 			ErrorMessage: err.Error(),
 		})
