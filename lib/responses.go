@@ -1,4 +1,4 @@
-package controllers
+package lib
 
 type SuccessResponse struct {
 	Error bool        `json:"error"`
