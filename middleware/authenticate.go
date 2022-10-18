@@ -22,6 +22,6 @@ func AuthenticateUserToken(ctx *gin.Context) {
 		ctx.Abort()
 	}
 
-	ctx.Set("userId", userId)
+	ctx.Set("userId", userId.Hex())
 	ctx.Next()
 }
