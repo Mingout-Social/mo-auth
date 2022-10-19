@@ -12,7 +12,7 @@ func AuthenticateUserToken(ctx *gin.Context) {
 	token := ctx.GetHeader("x-user-token")
 	os := ctx.GetHeader("x-os")
 
-	userId, err := lib.VerifyToken(token, os)
+	userId, oldUserId, err := lib.VerifyToken(token, os)
 
 	if err != nil {
 		ctx.JSON(http.StatusForbidden, lib.ErrorResponse{
@@ -23,5 +23,6 @@ func AuthenticateUserToken(ctx *gin.Context) {
 	}
 
 	ctx.Set("userId", userId.Hex())
+	ctx.Set("oldUserId", oldUserId)
 	ctx.Next()
 }
