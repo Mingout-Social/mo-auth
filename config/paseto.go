@@ -1,9 +1,10 @@
 package config
 
 import (
+	"os"
+
 	"aidanwoods.dev/go-paseto"
 	"github.com/sirupsen/logrus"
-	"os"
 )
 
 const (
@@ -14,15 +15,6 @@ const (
 
 var PasetoSecretKey paseto.V4AsymmetricSecretKey
 var PasetoPublicKey paseto.V4AsymmetricPublicKey
-
-func InitPasetoPrivateKey() {
-	var err error
-
-	PasetoSecretKey, err = paseto.NewV4AsymmetricSecretKeyFromHex(os.Getenv("PASETO_SECRET_KEY"))
-	if err != nil {
-		logrus.Panicf("Error Initializing Paseto Private Key, Err: %v", err)
-	}
-}
 
 func InitPasetoPublicKey() {
 	var err error
